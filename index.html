@@ -1,0 +1,263 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <title>Flex Layout Portfolio</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <style>
+    *{
+      margin: 0; padding: 0px;
+      box-sizing: border-box;
+    }
+    a{ text-decoration: none;}
+    ul{ list-style-type: none;}
+    html, body{ height: 100%;}
+    .container{
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* 헤더 */
+    header{
+      position: absolute;
+      z-index: 9;
+      width: 100%;
+      background: rgba(255,255,255,0.6);
+      height: 50px;
+    }
+
+    header .container{
+      padding: 0 10px 0 10px;
+      display: flex;    /* step2: flex */
+    }
+
+    /* step2: 로고 & 네비게이션 */
+    header h1{ flex: 1;}
+
+    header nav > ul{ display: block;}  /* 목록 표시 */
+    header nav li{
+      display: inline-block;
+      padding: 0 10px 10px 10px;
+      line-height: 50px;
+    }
+
+    /*step2: 모바일 네비게이션 토글 버튼(비표시) */
+    .toggle_btn{ display: none; }
+
+
+    /* 히어로 배너 */
+    .main_banner{
+      position: relative;
+      width: 100%;
+      height: 100%;
+      background-image: url(https://images.pexels.com/photos/34199/pexels-photo.jpg?w=940&h=650&auto=compress&cs=tinysrgb);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      color: white;
+    }
+    .main_banner .container{
+      position: absolute;
+      left:0; right:0;
+      top: 40%;
+      background: rgba(0,0,0,0.4);
+      text-align: center;
+    }
+    .main_banner { font-size: 300%;}
+
+
+    /* 개요(아이콘 영역) */
+    section.conA{
+      margin: 20px 0 20px 0;
+    }
+    section.conA ul.icons{
+      display: flex;
+      text-align: center;
+      padding: 20px 10px 20px 10px;
+
+    }
+    section.conA .icon{
+      font-size: 80px;
+      background: #ccc; color: white;
+      border-radius: 50%;
+      padding: 30px;
+    }
+
+
+    /* 개요(이미지 + 글자) */
+    section.conB{
+      margin: 40px 0 0 0;
+      background: #046380; color: #fff;
+    }
+    section.conB ul{
+      display: flex;
+      padding: 20px;
+    }
+    /* flex 박스를 수평(row) Z 정렬*/
+    section.conB ul:first-child {
+      flex-direction: row;
+      text-align: right;
+    }
+    section.conB ul:last-child {
+      flex-direction: row-reverse;
+
+    }
+    section.conB ul li{ flex: auto;}
+
+    section.conB ul li.photo{}
+    section.conB ul img{ display: block;}
+    section.conB ul li.text{
+      padding: 20px 10px 10px 10px;
+    }
+    section.conB ul li.text > p{
+      margin-bottom: 20px;
+    }
+    /* cta 버튼 */
+    section.conB ul li.text a{
+      display: inline-block;
+      padding: 5px 20px;
+      background: rgba(255,255,255,0.6);
+      color: #333;
+    }
+
+    /* 푸터 */
+    footer{
+      background: #002F2F; color: #fff;
+      padding-top: 20px; padding-bottom: 20px;
+    }
+    footer > .container{ padding: 0px 10px 0 10px;}
+    footer .footer_nav{
+      display: flex;
+    }
+    .footer_nav > .flex{ flex: 1;}
+    .footer_nav > .sns{
+      text-align: right;
+      font-size: 32px;
+    }
+    .footer_nav > .sns > li{ display: inline-block;}
+
+
+
+    /* step2: 모바일: 브레이크 포인트 749px(아이폰6) */
+    @media screen and (max-width:749px){
+
+
+    }  /* end media */
+
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>logo</h1>
+      <!-- step2: 모바일 토글버튼 추가 -->
+      <button class="toggle_btn">MENU</button>
+      <nav>
+        <ul>
+          <li>HOME</li>
+          <li>ABOUT</li>
+          <li>PORTFOLIO</li>
+          <li>CONTACT</li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="main_banner">
+    <div class="container">
+      <h1>hero title</h1>
+      <p>Lorem ipsum dolor sit amet.</p>
+    </div>
+  </section>
+
+  <section class="conA">
+    <div class="container">
+      <ul class="icons">
+        <li>
+          <i class="fa fa-user-circle-o icon"></i>
+          <h2>Lorem ipsum dolor.</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, ratione?</p>
+          <a href="#">MORE...
+            <i class="fa fa-hand-o-right"></i>
+          </a>
+        </li>
+        <li>
+          <i class="fa fa-bar-chart icon"></i>
+          <h2>Lorem ipsum dolor.</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, ratione?</p>
+          <a href="#">MORE...
+            <i class="fa fa-hand-o-right"></i>
+          </a>
+        </li>
+        <li>
+          <i class="fa fa-user-circle-o icon"></i>
+          <h2>Lorem ipsum dolor.</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, ratione?</p>
+          <a href="#">MORE...
+            <i class="fa fa-hand-o-right"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="conB">
+    <div class="container">
+      <ul>
+        <li class="photo">
+          <img src="https://images.pexels.com/photos/414974/pexels-photo-414974.jpeg?w=940&h=650&auto=compress&cs=tinysrgb" alt="" width="100%">
+        </li>
+        <li class="text">
+          <h2>Lorem ipsum dolor.</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero recusandae, ipsum nobis nemo ullam, aliquam dolorem perspiciatis minima rerum laudantium facere possimus quidem aliquid eveniet adipisci voluptates laboriosam corporis dolores!</p>
+          <a href="#">작품 보러 가기</a>
+        </li>
+      </ul>
+      <ul>
+        <li class="photo">
+          <img src="https://images.pexels.com/photos/41958/honey-honey-jar-honey-for-sale-beekeeper-41958.jpeg?w=940&h=650&auto=compress&cs=tinysrgb" alt="" width="100%">
+        </li>
+        <li class="text">
+          <h2>Lorem ipsum dolor.</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero recusandae, ipsum nobis nemo ullam, aliquam dolorem perspiciatis minima rerum laudantium facere possimus quidem aliquid eveniet adipisci voluptates laboriosam corporis dolores!</p>
+          <a href="#">작품 보러 가기</a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+
+  <footer>
+    <div class="container">
+      <h2>Your Logo</h2>
+      <nav class="footer_nav">
+        <p class="copy flex">copyright 2017 Lorem ipsum dolor sit amet.</p>
+        <ul class="sns flex">
+          <li><i class="fa fa-twitter-square" aria-hidden="true"></i></li>
+          <li><i class="fa fa-facebook-square" aria-hidden="true"></i></li>
+          <li><i class="fa fa-google-plus-square" aria-hidden="true"></i></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+
+
+  <script>
+    $(function(){
+      // 모버일 버튼 메뉴 토글 기능 추가
+
+
+
+
+
+    });
+  </script>
+
+
+
+
+</body>
+</html>
